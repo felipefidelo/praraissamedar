@@ -40,30 +40,18 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
-    .message {
-      position: absolute;
-      top: calc(50% + 60px);
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ff0000;
-      font-size: 20px;
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <h1>Se conseguir clicar no botão, não precisa de me dar o cu! Te amo, mor.</h1>
+  <h1>Se conseguir clicar no botão, não precise de me dar o cu! Te amo, mor.</h1>
   <button onclick="startGame()">Jogar</button>
   <div class="game-container" id="gameContainer">
     <div class="ball" id="ball" onclick="clickBall()">Clique aqui</div>
-    <div class="message" id="message">Perdeu, vai ter que me dar</div>
   </div>
 
   <script>
     function startGame() {
       document.getElementById("ball").style.display = "block";
-      document.getElementById("message").style.display = "none";
       moveBall();
     }
 
@@ -80,23 +68,13 @@
 
       ball.style.left = randomX + "px";
       ball.style.top = randomY + "px";
-      setTimeout(function() {
-        displayMessage();
-      }, 1000);
     }
 
     function clickBall() {
       var ball = document.getElementById("ball");
       ball.style.display = "none";
       moveBall();
-    }
-
-    function displayMessage() {
-      var message = document.getElementById("message");
-      message.style.display = "block";
-      setTimeout(function() {
-        message.style.display = "none";
-      }, 2000);
+      ball.style.display = "block";
     }
   </script>
 </body>
